@@ -1,0 +1,80 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+}
+body {
+  background-color: rgb(9, 8, 8);
+  font-family: "Courier New", Courier, monospace;
+}
+.clock {
+  height: 35vw;
+  width: 35vw;
+  min-height: 330px;
+  min-width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: #0057ff;
+  font-family: "Baskervville SC", serif;
+  font-size: clamp(16px, 4vw, 40px);
+  text-align: center;
+  margin: 5% auto;
+  letter-spacing: 2%;
+}
+
+.top-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 90vw;
+  height: 30vw;
+  min-height: 200px;
+  min-width: 400px;
+}
+
+.business-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 45vw;
+  height: 24vw;
+  padding: 2%;
+  border-radius: 2%;
+  background: radial-gradient(
+    circle at 50% 120%,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s ease-in-out;
+}
+.business-card:hover {
+  box-shadow: 0 0 2px #ff0, 0 0 5px #ff0, 0 0 10px #ff0,
+    0 0 5px rgba(255, 255, 0, 0.8);
+  background: radial-gradient(
+    circle,
+    rgba(255, 165, 0, 0.6),
+    rgba(255, 165, 0, 0)
+  );
+  border-radius: 2%;
+}
+
+.business-card > h2 {
+  text-align: center;
+  color: #0057ff;
+}
+.business-card > div > img {
+  width: clamp(100px, 50vw, 200px);
+  height: clamp(100px, 50vw, 200px);
+  background: transparent;
+  border-radius: 20%;
+}

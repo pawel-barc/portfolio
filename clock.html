@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Watch</title>
+    <link rel="stylesheet" href="clock.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="main-container" id="main-container-id">
+        <!--"watch-dial" contient tous les éléments du cadran -->
+        <div class="watch-dial" id="watch-dial-id">
+          <!--"dial-center" est le point central du cadran-->
+          <div class="dial-center" id="dial-center-id"></div>
+          <!--"hour-markers" contient 12 unités, chacune eloignée de 30 degrés-->
+          <div class="hour-markers" id="hour-markers-id"></div>
+          <!--Aiguille des heures-->
+          <div class="hour-hand" id="hour-hand-id"></div>
+          <!--Aiguille des minutes-->
+          <div class="minute-hand" id="minute-hand-id"></div>
+          <!--Aiguille des secondes-->
+          <div class="second-hand" id="second-hand-id"></div>
+          <!--Complication du calendrier: affiche la date actuelle-->
+          <div class="calendar-complication" id="calendar-complication-id">
+            <span class="date-display"></span>
+          </div>
+          <!--Complication "phase de la lune" : affichage du cycle lunaire-->
+          <div class="moon-container">
+            <div class="moon"></div>
+            <div class="moon-shadow"></div>
+          </div>
+          <!--Le petit cadran pour les jours de la semaine-->
+          <div class="days-dial" id="days-dial-id">
+            <div class="days-dial-center"></div>
+            <div class="test-center"></div>
+            <div class="days-dial-hand" id="days-dial-hand-id"></div>
+            <div class="days-dial-markers" id="days-dial-markers-id"></div>
+            <div class="days-container" id="days-container-id"></div>
+          </div>
+          <p>Hello World</p>
+        </div>
+      </div>
+    </main>
+    <script src="clock.js"></script>
+  </body>
+</html>

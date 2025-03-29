@@ -1,0 +1,315 @@
+body {
+  overflow: hidden;
+}
+
+.main-container {
+  width: 250px;
+  height: 250px;
+}
+
+/*///////////////Les styles de la montre///////////////////*/
+.watch-dial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70vw;
+  width: 70vw;
+  max-height: 520px;
+  max-width: 520px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  /* border: 2px solid #ccff00; */
+}
+
+/*Centre du cadran*/
+.dial-center {
+  position: absolute;
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0057ff;
+  border-style: double;
+  z-index: 5;
+}
+
+/*///Graduation container///*/
+.hour-markers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hour-marker {
+  position: absolute;
+  width: 1%;
+  height: 2%;
+  background-color: white;
+  top: 0;
+  left: 49.5%;
+  transform-origin: 50% 2500%;
+  z-index: 2;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.middle-hour-marker {
+  position: absolute;
+  width: 1.6%;
+  height: 6%;
+  background-color: #0057ff;
+  top: 0;
+  left: 49.4%;
+  transform-origin: 50% 835%;
+  z-index: 2;
+  border-radius: 40% 40% 40% 40%;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  filter: drop-shadow(2px 2px 5px #0057ff);
+}
+
+.thick-hour-marker {
+  position: absolute;
+  width: 4%;
+  height: 10%;
+  background-color: #0057ff;
+  top: 0;
+  left: 47.9%;
+  transform-origin: 50% 500%;
+  border-radius: 80% 80% 80% 80%;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  filter: drop-shadow(1px 1px 1px #0057ff);
+}
+
+/*/ ///Aiguilles////*/
+.hour-hand {
+  position: absolute;
+  left: 48.7%;
+  top: 11.4%;
+  width: 2%;
+  height: 43%;
+  background-color: #0057ff;
+  border-radius: 90% 90% 0% 0%;
+  transform-origin: 55% 90%;
+  z-index: 2;
+  filter: drop-shadow(2px 2px 5px #0057ff);
+}
+
+.minute-hand {
+  position: absolute;
+  left: 49.6%;
+  top: 4.9%;
+  width: 1%;
+  height: 50%;
+  background-color: #0057ff;
+  border-radius: 60% 60% 0% 0%;
+  transform-origin: 40% 90%;
+  z-index: 3;
+}
+
+.second-hand {
+  position: absolute;
+  left: 49.6%;
+  top: 0.7%;
+  transform: translate(-50%, -50%);
+  width: 0.6%;
+  height: 55%;
+  z-index: 4;
+  background-color: rgb(255, 255, 255);
+  border-radius: 60% 60% 0% 0%;
+  transform-origin: 90% 89.2%;
+}
+
+/*/////////////////////////////////Date////////////////////////////////////////*/
+.calendar-complication {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+  color: #d4d5cc;
+  font-weight: 700;
+  font-size: clamp(10px, 2.5vw, 18px);
+  border: 1px solid #0057ff;
+  padding: clamp(1px, 0.8vw, 4px) clamp(5px, 1.5vw, 12px) clamp(1px, 0.8vw, 4px)
+    clamp(5px, 1.5vw, 12px);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/*/ ////////////////////Phase de la lune///////////////////////////////////*/
+.moon-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 20%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 40px;
+}
+
+.moon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #0057ff;
+  left: 40px;
+}
+
+.moon:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 0, 1);
+}
+
+/*Ombre de la lune simulant la phase lunaire*/
+.moon-shadow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  right: var(--shadow-position); /*Position dynamique de l'ombre*/
+  /*Opacité dynamique en fonction de la phase lunaire*/
+  opacity: var(--shadow-visibility);
+  mix-blend-mode: multiply; /*Mélange l'ombre avec le font*/
+  transition: all 0.5s ease-out;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*/ ////////////////////Les idées////////////////////////////*/
+/* background: linear-gradient(45deg, #0f0, #00ffff); */
+/* background: radial-gradient(circle at center, #578e4a 40%, #bef177 100%);
+background-color: white;
+box-shadow: inset 0px 0px 7px 5px rgba(0, 255, 0, 0.8); */
+.hour-hand,
+.minute-hand,
+.second-hand {
+  filter: drop-shadow(2px 2px 5px #0057ff);
+  box-shadow: 2px 0px 0px 1px rgba(0, 0, 0, 0.4);
+}
+
+.watch-dial:hover {
+  box-shadow: 0 0 2px #ff0, 0 0 5px #ff0, 0 0 10px #ff0,
+    0 0 5px rgba(255, 255, 0, 0.8);
+  background: radial-gradient(
+    circle,
+    rgba(255, 165, 0, 0.8),
+    rgba(255, 165, 0, 0)
+  );
+  border-radius: 50%;
+}
+
+/*///////////////////////////////Les jours de la semaine/////////////*/
+
+.days-dial {
+  position: absolute;
+  width: 22%;
+  height: 22%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px dashed #0057ff;
+  border-radius: 50%;
+  z-index: 6;
+}
+
+.days-dial-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3%;
+  height: 3%;
+  border-radius: 50%;
+  /* background-color: rgb(0, 0, 0); */
+  outline: 1.5px double rgb(0, 0, 0);
+  z-index: 7;
+}
+
+.days-dial-markers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.day-marker {
+  position: absolute;
+  bottom: 90%;
+  width: 6%;
+  height: 6%;
+  border-radius: 50%;
+  background-color: #0057ff;
+  transform-origin: 50% 750%;
+}
+
+.days-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.day {
+  position: absolute;
+  top: 3%;
+  left: 38%;
+  transform-origin: 50% 350%;
+  color: white;
+  /*Taille du texte proportionnelle au cadran*/
+  font-size: calc(0.11 * var(--dial-size));
+  transform: rotate(var(--angle));
+}
+
+.days-dial-hand {
+  position: absolute;
+  left: 47%;
+  top: 21%;
+  width: 6%;
+  height: 40%;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  transform-origin: 50% 73%;
+}
+
+.test-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 22%;
+  height: 22%;
+  border: 2px dotted rgb(255, 255, 255);
+}
+.watch-dial > p {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(14px, 3.5vw, 32px);
+  color: white;
+  font-family: "Lovers Quarrel";
+  letter-spacing: 8%;
+  transform-origin: 50% 100px;
+}
+.watch-dial > p:hover {
+  text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 15px #ff0,
+    0 0 20px rgba(255, 255, 0, 0.8);
+}
