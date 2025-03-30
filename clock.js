@@ -117,15 +117,6 @@ for (let i = 0; i < 7; i++) {
   dayMarker.style.transform = `rotate(${i * stepAngle + 25.7}deg)`; // Placement des marqueurs
   daysDialMarkersContainer.appendChild(dayMarker);
 }
-// Fonction pour ajouster dynamiquement la taille de la police en fonction de la taille du cadran
-function updateFontSize() {
-  const dial = document.getElementById("days-dial-id");
-  const dialSize = dial.offsetWidth;
-  document.documentElement.style.setProperty("--dial-size", `${dialSize}px`); // Ajustement de la police
-}
-// Écouteur d'événement pour ajuster la taille de la police en cas de redimensionnement
-window.addEventListener("resize", updateFontSize);
-updateFontSize();
 
 // Fonction pour indiquer le jour courant dans le petit cadran
 function dayHandFocus() {

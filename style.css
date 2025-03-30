@@ -1,3 +1,5 @@
+/*Styles globales*/
+
 *,
 ::before,
 ::after {
@@ -12,15 +14,15 @@ body {
   background-color: rgb(9, 8, 8);
   font-family: "Courier New", Courier, monospace;
 }
+/*Montre*/
 .clock {
-  height: 35vw;
-  width: 35vw;
-  min-height: 330px;
-  min-width: 330px;
+  height: 500px;
+  width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+/*Title et Container haut*/
 h1 {
   color: #0057ff;
   font-family: "Baskervville SC", serif;
@@ -42,39 +44,139 @@ h1 {
   min-width: 400px;
 }
 
+/*Ma carte de visite*/
 .business-card {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  gap: 5%;
   flex-direction: column;
-  width: 45vw;
-  height: 24vw;
-  padding: 2%;
+  width: 50vw;
+  height: auto;
   border-radius: 2%;
-  background: radial-gradient(
-    circle at 50% 120%,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  border: 1px dotted #0057ff;
   transition: 0.5s ease-in-out;
-}
-.business-card:hover {
-  box-shadow: 0 0 2px #ff0, 0 0 5px #ff0, 0 0 10px #ff0,
-    0 0 5px rgba(255, 255, 0, 0.8);
-  background: radial-gradient(
-    circle,
-    rgba(255, 165, 0, 0.6),
-    rgba(255, 165, 0, 0)
-  );
-  border-radius: 2%;
+  padding: 2%;
 }
 
-.business-card > h2 {
-  text-align: center;
-  color: #0057ff;
+.business-card:hover {
+  box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #501ae5,
+    0 0 40px rgba(43, 26, 96, 0.8);
+  border-radius: 2%;
+  background: radial-gradient(circle, rgba(0, 110, 255, 0.9), rgb(30, 29, 29));
 }
-.business-card > div > img {
-  width: clamp(100px, 50vw, 200px);
-  height: clamp(100px, 50vw, 200px);
+
+.business-card-top {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 5%;
+  width: 48vw;
+  height: auto;
+}
+.picture-name > h2 {
+  background-color: #5271ff;
+  border-radius: 4%;
+  text-align: center;
+}
+
+.picture-name > img {
+  width: clamp(100px, 20vw, 200px);
+  height: clamp(100px, 20vw, 200px);
   background: transparent;
   border-radius: 20%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out;
+}
+
+.picture-name > img:hover {
+  transform: rotateX(20deg) translateY(-5px);
+}
+
+.personal-data {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5%;
+  width: 60%;
+  height: auto;
+  background-color: #5271ff;
+  border-radius: 10%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out;
+}
+
+.personal-data > div {
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  gap: 5%;
+  line-height: 1.5em;
+  border-bottom: 1px solid #501ae5;
+}
+
+.personal-data > strong {
+  margin: 3% 2%;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.5em;
+  color: azure;
+}
+
+i {
+  width: 15px;
+  height: 15px;
+  color: #2a0296;
+}
+
+.personal-data > div > a {
+  color: #2a0296;
+  font-family: monospace;
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: 2%;
+}
+
+.social-media-links {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.social-media-links i {
+  font-size: 3vw;
+  color: #5271ff;
+  transition: filter 0.3s ease-in-out;
+}
+
+.social-media-links i:hover {
+  filter: drop-shadow(0 0 15px rgba(255, 255, 200, 0.9));
+}
+/*Styles tooltip*/
+.tooltip {
+  position: relative;
+  text-decoration: none;
+  color: #0057ff;
+  font-weight: bold;
+}
+
+.tooltip::after {
+  position: absolute;
+  bottom: 95%;
+  transform: translateX(-45%);
+  content: attr(data-tooltip);
+  visibility: hidden;
+  color: #0057ff;
+  padding: 5px 10px;
+  white-space: nowrap;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
 }

@@ -11,16 +11,70 @@
       href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Gideon+Roman&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>BienVenu sur mon PortFolio</h1>
+    <h1>Welcome to my PortFolio</h1>
     <main>
+      <!--Carte de visite et Montre-->
       <div class="top-container">
         <!-- Première section liée à la carte de visite -->
         <section class="business-card">
-          <h2>Ma carte de visite</h2>
-          <div>
-            <img src="picture.png" />
+          <div class="business-card-top">
+            <div class="picture-name">
+              <img src="picture.png" alt="Profile picture of Pawel Barc" />
+              <h2>Pawel Barc</h2>
+            </div>
+            <div class="personal-data">
+              <strong>Bachelor developer ready for new opportunities.</strong>
+              <div>
+                <i class="fas fa-map-marker-alt"></i
+                ><a
+                  href="https://www.google.com/maps?q=Martigues"
+                  target="_blank"
+                  >Martigues</a
+                >
+                <strong style="color: rgb(19, 10, 114); font-size: large"
+                  >Flexible</strong
+                >
+              </div>
+              <div>
+                <i class="fas fa-phone"></i
+                ><a href="tel:+33785450671">0785450671</a>
+              </div>
+              <div>
+                <i class="fas fa-envelope"></i
+                ><a href="mailto:pawel.barc@laplateforme.io"
+                  >pawel.barc@laplateforme.io</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="social-media-links">
+            <a
+              href="https://www.linkedin.com/in/pawel-barc-développeur-web"
+              target="_blank"
+              class="tooltip"
+              data-tooltip="Visit My Linkedin"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/pawel-barc"
+              target="_blank"
+              class="tooltip"
+              data-tooltip="Visit My Github"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="cv.pdf"
+              download="cv.pdf"
+              class="tooltip"
+              data-tooltip="Download My Resume"
+              ><i class="fas fa-file-arrow-down"></i
+            ></a>
           </div>
         </section>
         <!-- Deuxième section liée à la montre -->
@@ -38,7 +92,7 @@
       </section>
       <!-- Quatrième section liée à mes compétences -->
       <section class="skills"></section>
-      <!-- Cinquième section liée au carrousel des projects -->
+      <!-- Cinquième section liée au carrousel des projets -->
       <section></section>
       <!-- Sixième section liée au formulaire de contact -->
       <section>
