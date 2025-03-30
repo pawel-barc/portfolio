@@ -7,33 +7,115 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 100%;
 }
+
 body {
-  background-color: rgb(9, 8, 8);
   font-family: "Courier New", Courier, monospace;
+  background-color: rgb(9, 8, 8);
 }
-/*Montre*/
-.clock {
-  height: 500px;
-  width: 500px;
+
+/*Header*/
+header > nav > ul {
   display: flex;
-  align-items: center;
   justify-content: center;
+  gap: 5%;
+  height: auto;
+  border-bottom: 1px solid rgb(44, 47, 146);
+  background: rgb(28, 27, 27);
 }
-/*Title et Container haut*/
+
+header > nav > ul > li {
+  margin: 1%;
+}
+
+header > nav > ul > li > a {
+  position: relative;
+  color: #0057ff;
+  font-size: 1.4em;
+  font-weight: bold;
+  list-style: none;
+  text-decoration: none;
+  transition: color 0.3 ease;
+}
+
+header > nav > ul > li > a:hover {
+  color: #0057ff;
+}
+
+header > nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #1a54e5;
+  left: 50%;
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+
+header > nav > ul > li > a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Title*/
 h1 {
   color: #0057ff;
   font-family: "Baskervville SC", serif;
-  font-size: clamp(16px, 4vw, 40px);
+  font-size: clamp(16px, 6vw, 45px);
   text-align: center;
-  margin: 5% auto;
+  margin: 3% auto;
   letter-spacing: 2%;
 }
 
-.top-container {
-  margin: 0 auto;
+/*///////////////////////////À propos de moi////////////////////////////////*/
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-family: "Baskervville SC", serif;
+  font-size: clamp(20px, 4vw, 36px);
+  line-height: 1.7em;
+  color: #5271ff;
+  margin: 3vw 8vw;
+}
+.intro {
+  display: flex;
+  margin: 1% auto;
+}
+
+.about-me > i {
+  position: relative;
+  right: 3.1%;
+  transform: translateX(-40%);
+  font-size: 8vw;
+  transform: rotateX(180deg);
+  margin-top: 7%;
+  filter: drop-shadow(0 -30px 45px rgb(255, 255, 255));
+}
+
+/*Le container avec ma carte de visite et la montre*/
+.profile-container {
+  margin: 10vw auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,6 +124,15 @@ h1 {
   height: 30vw;
   min-height: 200px;
   min-width: 400px;
+}
+
+/*Montre*/
+.clock {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*Ma carte de visite*/
@@ -75,6 +166,7 @@ h1 {
   width: 48vw;
   height: auto;
 }
+
 .picture-name > h2 {
   background-color: #5271ff;
   border-radius: 4%;
@@ -155,6 +247,7 @@ i {
 .social-media-links i:hover {
   filter: drop-shadow(0 0 15px rgba(255, 255, 200, 0.9));
 }
+
 /*Styles tooltip*/
 .tooltip {
   position: relative;
@@ -180,3 +273,49 @@ i {
   visibility: visible;
   opacity: 1;
 }
+
+/*////////////////////////////Styles Skills////////////////////////////*/
+
+.skills > h2 {
+  color: #1a54e5;
+  text-align: center;
+  margin: 2vw auto;
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+  gap: 40px;
+  border: 1px solid #0057ff;
+  border-radius: 4%;
+  max-width: 600px;
+  margin: 0 2vw;
+  padding: 4%;
+}
+.skill p {
+  margin-top: 30px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+}
+.skill {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: clamp(90px, 4vw, 120px);
+  height: clamp(90px, 4vw, 110px);
+  background-color: #501ae5;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+.skills-container > div > i {
+  font-size: 45px;
+  width: 60px;
+  color: aliceblue;
+}
+
+/*Styles Carousel*/

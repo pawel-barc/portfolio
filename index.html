@@ -17,11 +17,34 @@
     />
   </head>
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about-me">About Me</a></li>
+          <li><a href="#profile-card">Profile Card</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <h1>Welcome to my PortFolio</h1>
-    <main>
+    <main class="main-container">
+      <!-- Première  section liée à ma courte description -->
+      <section class="about-me">
+        <i class="fas fa-lightbulb"></i>
+        <div class="about-text">
+          <h4>Hi, I'm Pawel.</h4>
+          <p>
+            I started my journey in development and I'm on a new career path,
+            which brings me a lot of satisfaction. I have a strong sense of
+            responsibility, and I can confidently say that I'm easy-going.
+          </p>
+        </div>
+      </section>
       <!--Carte de visite et Montre-->
-      <div class="top-container">
-        <!-- Première section liée à la carte de visite -->
+      <div class="profile-container">
+        <!--Deuxième section liée à la carte de visite -->
         <section class="business-card">
           <div class="business-card-top">
             <div class="picture-name">
@@ -77,7 +100,7 @@
             ></a>
           </div>
         </section>
-        <!-- Deuxième section liée à la montre -->
+        <!-- Troisième section liée à la montre -->
         <section class="clock">
           <iframe
             class="clock"
@@ -86,12 +109,55 @@
           ></iframe>
         </section>
       </div>
-      <!-- Troisième section liée à ma courte description -->
-      <section class="about-me">
-        <h2>À propos de moi</h2>
-      </section>
+
       <!-- Quatrième section liée à mes compétences -->
-      <section class="skills"></section>
+      <section class="skills">
+        <h2>Technologies I work with:</h2>
+        <div class="skills-container">
+          <div class="skill">
+            <i class="fab fa-html5" title="HTML5"></i>
+            <p>HTML 5</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-css3-alt" title="CSS3"></i>
+            <p>CSS3</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-bootstrap" title="Bootstrap"></i>
+            <p>Bootstrap</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-figma" title="Figma"></i>
+            <p>Figma</p>
+          </div>
+
+          <div class="skill">
+            <i class="fab fa-php" title="PHP"></i>
+            <p>PHP</p>
+          </div>
+
+          <div class="skill">
+            <i class="fab fa-node" title="Node.js"></i>
+            <p>Node.js</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-database" title="phpMyAdmin"></i>
+            <p>phpMyAdmin</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-leaf" title="MongoDB"></i>
+            <p>MongoDB</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-js" title="JavaScript"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-react" title="React"></i>
+            <p>React</p>
+          </div>
+        </div>
+      </section>
       <!-- Cinquième section liée au carrousel des projets -->
       <section></section>
       <!-- Sixième section liée au formulaire de contact -->
