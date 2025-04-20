@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Gideon+Roman&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Gideon+Roman&family=Tenali+Ramakrishna&display=swap"
       rel="stylesheet"
     />
     <link
@@ -31,7 +32,7 @@
     <h1>Welcome to my PortFolio</h1>
     <main class="main-container">
       <!-- Première  section liée à ma courte description -->
-      <section class="about-me">
+      <section class="about-me" id="about-me">
         <i class="fas fa-lightbulb"></i>
         <div class="about-text">
           <h4>Hi, I'm Pawel.</h4>
@@ -43,12 +44,15 @@
         </div>
       </section>
       <!--Carte de visite et Montre-->
-      <div class="profile-container">
+      <div class="profile-container" id="profile-card">
         <!--Deuxième section liée à la carte de visite -->
         <section class="business-card">
           <div class="business-card-top">
             <div class="picture-name">
-              <img src="picture.png" alt="Profile picture of Pawel Barc" />
+              <img
+                src="images/picture.png"
+                alt="Profile picture of Pawel Barc"
+              />
               <h2>Pawel Barc</h2>
             </div>
             <div class="personal-data">
@@ -111,7 +115,7 @@
       </div>
 
       <!-- Quatrième section liée à mes compétences -->
-      <section class="skills">
+      <section class="skills" id="skills">
         <h2>Technologies I work with:</h2>
         <div class="skills-container">
           <div class="skill">
@@ -159,10 +163,100 @@
         </div>
       </section>
       <!-- Cinquième section liée au carrousel des projets -->
-      <section></section>
+      <section class="carousel" id="projects">
+        <div class="carousel-container">
+          <div class="slide">
+            <img src="images/ParcNationalCalanques.jpg" alt="Calanques" />
+            <div class="caption1">
+              <h3>National Park Calanques</h3>
+              <p>
+                A responsive web app providing general information about the
+                park, a camping reservation system, and separate admin & user
+                panels. Built with PHP (MVC model) for structured development.
+              </p>
+              <a href="https://...com" target="_blank" class="project-link"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/MyCookBook.jpg" alt="Recipes Liste" />
+            <div class="caption2">
+              <h3>MyCookBook</h3>
+              <p>
+                A modern recipe-sharing web app where users can add, favorite,
+                and rate recipes. Features authentication with refresh tokens
+                for security. Built with Node.js, Express, MongoDB, and React
+                Vite for a seamless experience.
+              </p>
+              <a
+                href="https://twoj-projekt1.com"
+                target="_blank"
+                class="project-link"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/MatchaTee.jpg" alt="Tee shop" />
+            <div class="caption3">
+              <h3>Le T Matcha</h3>
+              <p>
+                One of our earliest projects, a basic tea boutique website made
+                with HTML & CSS. The design and styles are quite simple, but it
+                laid the foundation for future improvements. A new version with
+                a backend is coming soon!
+              </p>
+              <a
+                href="https://twoj-projekt1.com"
+                target="_blank"
+                class="project-link"
+                >View Project</a
+              >
+            </div>
+          </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </section>
+
       <!-- Sixième section liée au formulaire de contact -->
-      <section>
-        <form></form>
+      <section id="contact" class="contact-section">
+        <section id="thanks" class="success-message" style="display: none">
+          <p>Thank you for your message ! I'll get back to you soon</p>
+        </section>
+        <h2>Contact Me</h2>
+        <form
+          action="https://formsubmit.co/f66ad0bf676e5d455cab3ef79ab3fba3"
+          method="POST"
+          class="contact-form"
+          id="contact-form"
+        >
+          <div class="input-fields">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+            />
+          </div>
+          <div class="textarea-field">
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Message..."
+              required
+            ></textarea>
+          </div>
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="http://127.0.0.1:5500/index.html#thanks"
+          />
+          <button type="submit">Send the message</button>
+        </form>
       </section>
     </main>
     <script src="script.js"></script>

@@ -19,16 +19,21 @@ body {
 
 /*Header*/
 header > nav > ul {
+  position: fixed;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: center;
   gap: 5%;
   height: auto;
+  width: 100%;
   border-bottom: 1px solid rgb(44, 47, 146);
   background: rgb(28, 27, 27);
 }
 
 header > nav > ul > li {
   margin: 1%;
+  list-style: none;
 }
 
 header > nav > ul > li > a {
@@ -74,13 +79,14 @@ h1 {
   font-family: "Baskervville SC", serif;
   font-size: clamp(16px, 6vw, 45px);
   text-align: center;
-  margin: 3% auto;
+  margin: 6vw auto;
   letter-spacing: 2%;
 }
 
 /*///////////////////////////À propos de moi////////////////////////////////*/
 
 .about-me {
+  scroll-margin-top: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,6 +104,7 @@ h1 {
   color: #5271ff;
   margin: 3vw 8vw;
 }
+
 .intro {
   display: flex;
   margin: 1% auto;
@@ -115,6 +122,7 @@ h1 {
 
 /*Le container avec ma carte de visite et la montre*/
 .profile-container {
+  scroll-margin-top: 200px;
   margin: 10vw auto;
   display: flex;
   justify-content: space-around;
@@ -262,7 +270,7 @@ i {
   transform: translateX(-45%);
   content: attr(data-tooltip);
   visibility: hidden;
-  color: #0057ff;
+  color: #dedfe2;
   padding: 5px 10px;
   white-space: nowrap;
   text-align: center;
@@ -276,11 +284,17 @@ i {
 
 /*////////////////////////////Styles Skills////////////////////////////*/
 
+.skills {
+  scroll-margin-top: 130px;
+  margin-bottom: 7vw;
+}
+
 .skills > h2 {
   color: #1a54e5;
   text-align: center;
   margin: 2vw auto;
 }
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -293,12 +307,14 @@ i {
   margin: 0 2vw;
   padding: 4%;
 }
+
 .skill p {
   margin-top: 30px;
   font-size: 14px;
   color: white;
   font-weight: bold;
 }
+
 .skill {
   display: flex;
   align-items: center;
@@ -312,10 +328,184 @@ i {
   border-radius: 10px;
   text-align: center;
 }
+
 .skills-container > div > i {
   font-size: 45px;
   width: 60px;
   color: aliceblue;
 }
 
-/*Styles Carousel*/
+/*//////////////////////////Styles Carousel///////////////////////////*/
+
+.carousel {
+  scroll-margin-top: 70px;
+  position: relative;
+  box-sizing: content-box;
+  width: 60vw;
+  min-width: 320px;
+  overflow: hidden;
+  border-radius: 2%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 5vw auto;
+  /* border: 1px solid #0057ff; */
+  padding: 1.5vw;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+  position: relative;
+}
+
+.slide > img {
+  width: 50vw;
+  min-width: 280px;
+  height: auto;
+  object-fit: contain;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top: 2px solid #0057ff;
+  border-left: 2px solid #0057ff;
+  border-right: 2px solid #0057ff;
+}
+
+.slide h3 {
+  margin: 2% auto;
+  font-family: "Tenali Ramakrishna", sans-serif;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.caption1,
+.caption2,
+.caption3 {
+  text-align: center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px 15px;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 50vw;
+  min-width: 280px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  border-bottom: 2px solid #0057ff;
+  border-left: 2px solid #0057ff;
+  border-right: 2px solid #0057ff;
+}
+.caption1 {
+  background-color: #81a2cbf5;
+  color: white;
+}
+.caption2 {
+  background-color: #e9e9e9;
+  color: #637283;
+}
+.caption3 {
+  background-color: #c6ebbe;
+  color: #194aad;
+}
+
+/*Navigation*/
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 1%;
+  border-radius: 25%;
+}
+.prev {
+  left: 3%;
+}
+.next {
+  right: 3%;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #0057ff;
+}
+
+/*////////////////////////////Formulaire de Contact/////////////////////////////////*/
+
+#contact {
+  scroll-margin-top: 200px;
+  margin: 8vw auto;
+  padding-bottom: 200px;
+}
+
+.contact-section > h2 {
+  text-align: center;
+  color: #0057ff;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin: 5% auto;
+  width: clamp(300px, 80vw, 500px);
+  height: auto;
+  border-radius: 10px;
+  gap: 1em;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: 100%;
+}
+
+.input-fields input {
+  flex: 1;
+  padding: 2%;
+  text-align: center;
+  border: 3px solid #0057ff;
+  border-radius: 5px;
+  background-color: rgb(201, 228, 251);
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.textarea-field > textarea {
+  width: 100%;
+  padding: 2%;
+  border: 3px solid #0057ff;
+  border-radius: 5px;
+  background-color: rgb(201, 228, 251);
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.contact-form > button {
+  padding: 2%;
+  background: linear-gradient(to right, #194aad, #0057ff);
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: x-large;
+  letter-spacing: 3px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.success-message > p {
+  font-family: monospace;
+  font-size: large;
+  color: dodgerblue;
+  margin: 10vw auto;
+}
