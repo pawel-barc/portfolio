@@ -39,7 +39,7 @@ header > nav > ul > li {
 header > nav > ul > li > a {
   position: relative;
   color: #0057ff;
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: bold;
   list-style: none;
   text-decoration: none;
@@ -77,9 +77,9 @@ header > nav > ul > li > a:hover::after {
 h1 {
   color: #0057ff;
   font-family: "Baskervville SC", serif;
-  font-size: clamp(16px, 6vw, 45px);
+  font-size: clamp(16px, 15vw, 45px);
   text-align: center;
-  margin: 6vw auto;
+  margin: 6vw 2vw;
   letter-spacing: 2%;
 }
 
@@ -335,7 +335,7 @@ i {
   color: aliceblue;
 }
 
-/*//////////////////////////Styles Carousel///////////////////////////*/
+/*//////////////////////////Styles Carrousel///////////////////////////*/
 
 .carousel {
   scroll-margin-top: 70px;
@@ -508,4 +508,139 @@ i {
   font-size: large;
   color: dodgerblue;
   margin: 10vw auto;
+}
+
+@media (max-width: 400px) {
+  .clock {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-me {
+    margin-bottom: 150px;
+  }
+  .profile-container {
+    scroll-margin-top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-bottom: 120px;
+    width: 90vw;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #0057ff;
+    font-size: 50px;
+    cursor: pointer;
+    margin: 2vw;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    gap: 20px;
+    border-radius: 5px;
+  }
+
+  #nav-links.show {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: black;
+    border-bottom: 2px solid #0057ff;
+    margin: 60px 10px;
+  }
+  .business-card {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .business-card-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    min-width: 300px;
+    height: auto;
+  }
+  .picture-name {
+    margin: 2vw auto;
+  }
+
+  .picture-name > img {
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+  }
+  .personal-data {
+    width: auto;
+    border-radius: 5px;
+  }
+  .personal-data div a {
+    font-size: 14px;
+  }
+  .social-media-links i {
+    font-size: 6vw;
+    color: #5271ff;
+    transition: filter 0.3s ease-in-out;
+  }
+  .skills {
+    scroll-margin-top: 120px;
+    margin: 120px auto;
+  }
+
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  #contact {
+    scroll-margin-top: 150px;
+    margin: 300px auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .about-me {
+    margin: 5vw auto;
+  }
+  .profile-container {
+    scroll-margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-bottom: 150px;
+    width: 90vw;
+    height: auto;
+  }
+  .business-card {
+    min-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .business-card-top {
+    justify-content: center;
+  }
+  .personal-data {
+    min-width: 350px;
+  }
+
+  .skills {
+    scroll-margin-top: 140px;
+    margin: 10vw auto;
+  }
+
+  .carousel {
+    scroll-margin-top: 100px;
+  }
+
+  #contact {
+    scroll-margin-top: 300px;
+    margin: 300px auto;
+  }
 }
